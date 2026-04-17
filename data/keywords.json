@@ -1,0 +1,245 @@
+[
+  {
+    "keyword": "霍尼韦尔阀门湖北代理商",
+    "category": "品牌资质",
+    "priority": "P0",
+    "search_volume": 50,
+    "difficulty": "中",
+    "target_page": "/about",
+    "status": "待优化"
+  },
+  {
+    "keyword": "湖北霍尼韦尔代理",
+    "category": "品牌资质",
+    "priority": "P0",
+    "search_volume": 30,
+    "difficulty": "中",
+    "target_page": "/about",
+    "status": "待优化"
+  },
+  {
+    "keyword": "武汉霍尼韦尔阀门",
+    "category": "品牌资质",
+    "priority": "P0",
+    "search_volume": 40,
+    "difficulty": "中",
+    "target_page": "/products",
+    "status": "待优化"
+  },
+  {
+    "keyword": "V5011B2W参数",
+    "category": "产品型号",
+    "priority": "P0",
+    "search_volume": 80,
+    "difficulty": "低",
+    "target_page": "/products/v5011b2w",
+    "status": "待优化"
+  },
+  {
+    "keyword": "V5011B2W选型",
+    "category": "产品型号",
+    "priority": "P0",
+    "search_volume": 50,
+    "difficulty": "低",
+    "target_page": "/products/v5011b2w",
+    "status": "待优化"
+  },
+  {
+    "keyword": "V5GV法兰阀",
+    "category": "产品型号",
+    "priority": "P0",
+    "search_volume": 40,
+    "difficulty": "低",
+    "target_page": "/products/v5gv",
+    "status": "待优化"
+  },
+  {
+    "keyword": "霍尼韦尔电动二通阀安装",
+    "category": "技术问题",
+    "priority": "P0",
+    "search_volume": 60,
+    "difficulty": "低",
+    "target_page": "/knowledge/valve-installation",
+    "status": "待优化"
+  },
+  {
+    "keyword": "电动阀执行器接线",
+    "category": "技术问题",
+    "priority": "P0",
+    "search_volume": 50,
+    "difficulty": "低",
+    "target_page": "/knowledge/actuator-wiring",
+    "status": "待优化"
+  },
+  {
+    "keyword": "风机盘管电动阀",
+    "category": "技术问题",
+    "priority": "P0",
+    "search_volume": 100,
+    "difficulty": "中",
+    "target_page": "/products/v5011b2w",
+    "status": "待优化"
+  },
+  {
+    "keyword": "V5011S2W不锈钢阀门",
+    "category": "产品型号",
+    "priority": "P1",
+    "search_volume": 30,
+    "difficulty": "低",
+    "target_page": "/products/v5011s2w",
+    "status": "待优化"
+  },
+  {
+    "keyword": "V6GV高压电动座阀",
+    "category": "产品型号",
+    "priority": "P1",
+    "search_volume": 25,
+    "difficulty": "低",
+    "target_page": "/products/v6gv",
+    "status": "待优化"
+  },
+  {
+    "keyword": "霍尼韦尔阀门故障排查",
+    "category": "技术问题",
+    "priority": "P1",
+    "search_volume": 40,
+    "difficulty": "低",
+    "target_page": "/knowledge/valve-troubleshooting",
+    "status": "待优化"
+  },
+  {
+    "keyword": "风机盘管电动阀故障",
+    "category": "技术问题",
+    "priority": "P1",
+    "search_volume": 35,
+    "difficulty": "低",
+    "target_page": "/knowledge/fan-coil-valve-troubleshooting",
+    "status": "待优化"
+  },
+  {
+    "keyword": "中央空调阀门维修",
+    "category": "技术问题",
+    "priority": "P1",
+    "search_volume": 45,
+    "difficulty": "中",
+    "target_page": "/knowledge/valve-repair",
+    "status": "待优化"
+  },
+  {
+    "keyword": "电动二通阀不动作",
+    "category": "技术问题",
+    "priority": "P1",
+    "search_volume": 30,
+    "difficulty": "低",
+    "target_page": "/knowledge/valve-not-working",
+    "status": "待优化"
+  },
+  {
+    "keyword": "霍尼韦尔vs西门子阀门",
+    "category": "对比决策",
+    "priority": "P1",
+    "search_volume": 40,
+    "difficulty": "低",
+    "target_page": "/knowledge/honeywell-siemens-comparison",
+    "status": "待优化"
+  },
+  {
+    "keyword": "电动座阀vs电动球阀",
+    "category": "对比决策",
+    "priority": "P1",
+    "search_volume": 35,
+    "difficulty": "低",
+    "target_page": "/knowledge/valve-type-comparison",
+    "status": "待优化"
+  },
+  {
+    "keyword": "V5011B2W与V5011S2W区别",
+    "category": "对比决策",
+    "priority": "P1",
+    "search_volume": 15,
+    "difficulty": "低",
+    "target_page": "/products/v5011b2w",
+    "status": "待优化"
+  },
+  {
+    "keyword": "商业综合体阀门配套",
+    "category": "应用场景",
+    "priority": "P1",
+    "search_volume": 25,
+    "difficulty": "低",
+    "target_page": "/cases/commercial-complex",
+    "status": "待优化"
+  },
+  {
+    "keyword": "酒店中央空调阀门",
+    "category": "应用场景",
+    "priority": "P1",
+    "search_volume": 30,
+    "difficulty": "低",
+    "target_page": "/cases/hotel-hvac",
+    "status": "待优化"
+  },
+  {
+    "keyword": "工业厂房阀门选型",
+    "category": "应用场景",
+    "priority": "P2",
+    "search_volume": 20,
+    "difficulty": "低",
+    "target_page": "/cases/industrial-plant",
+    "status": "待优化"
+  },
+  {
+    "keyword": "霍尼韦尔阀门质保多久",
+    "category": "售后服务",
+    "priority": "P2",
+    "search_volume": 25,
+    "difficulty": "低",
+    "target_page": "/faq",
+    "status": "待优化"
+  },
+  {
+    "keyword": "霍尼韦尔vs丹佛斯",
+    "category": "对比决策",
+    "priority": "P2",
+    "search_volume": 20,
+    "difficulty": "低",
+    "target_page": "/knowledge/honeywell-danfoss-comparison",
+    "status": "待优化"
+  },
+  {
+    "keyword": "暖通阀门品牌对比",
+    "category": "对比决策",
+    "priority": "P2",
+    "search_volume": 50,
+    "difficulty": "中",
+    "target_page": "/knowledge/brand-comparison",
+    "status": "待优化"
+  },
+  {
+    "keyword": "宜昌霍尼韦尔阀门代理",
+    "category": "地域服务",
+    "priority": "P2",
+    "search_volume": 15,
+    "difficulty": "低",
+    "target_page": "/regions/yichang",
+    "status": "待优化"
+  },
+  {
+    "keyword": "襄阳霍尼韦尔阀门代理",
+    "category": "地域服务",
+    "priority": "P2",
+    "search_volume": 12,
+    "difficulty": "低",
+    "target_page": "/regions/xiangyang",
+    "status": "待优化"
+  },
+  {
+    "keyword": "荆州霍尼韦尔阀门代理",
+    "category": "地域服务",
+    "priority": "P2",
+    "search_volume": 10,
+    "difficulty": "低",
+    "target_page": "/regions/jingzhou",
+    "status": "待优化"
+  }
+]

@@ -1,0 +1,220 @@
+{
+  "main": {
+    "id": "3559ddddca43a251",
+    "type": "split",
+    "children": [
+      {
+        "id": "ebbcc1527e1a05cb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0f575ba286ca89c9",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7eb30eb4fd7ad5d4",
+    "type": "split",
+    "children": [
+      {
+        "id": "fe4d1ade59172690",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f51ba172af1e7faf",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "5c0bdb72d663a18d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "fcb2e6cddd19631b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5e7474e24b0ad821",
+    "type": "split",
+    "children": [
+      {
+        "id": "05014a3750e768d4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "18cece5f77de4bae",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "6b734f3c34231e0e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "c455a4155dc92fcf",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "ec81fb9ec550d311",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "dba6e6d636a993f5",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "0f575ba286ca89c9",
+  "lastOpenFiles": [
+    "scripts/merge-old-content.js",
+    "wiki.backup/topics/valve-selection-guide.md",
+    "wiki.backup/topics/valve-maintenance-guide.md",
+    "wiki.backup/topics/steam-valve-selection-guide.md",
+    "wiki.backup/topics/actuator-installation-guide.md",
+    "wiki.backup/sources/霍尼韦尔暖通空调电动阀与执行器综合样册-2025.md",
+    "wiki.backup/sources/honeywell-catalog-2025.md",
+    "wiki.backup/selection-guide/valve-selection-guide.md",
+    "wiki.backup/selection-guide/valve-maintenance-guide.md",
+    "wiki.backup/selection-guide/steam-valve-selection-guide.md",
+    "wiki.backup/selection-guide/actuator-installation-guide.md",
+    "wiki.backup/products/vh58.md",
+    "wiki.backup/products/vbf16e-vbh16e.md",
+    "wiki.backup/products/vba16pe.md",
+    "wiki.backup/products/vba16p.md",
+    "wiki.backup/products/vba16f.md",
+    "wiki.backup/products/v9bfw25.md",
+    "wiki.backup/products/v9bf.md",
+    "wiki.backup/products/v8bfs.md",
+    "wiki.backup/products/v6gv.md",
+    "wiki.backup/products/v5gv3w.md",
+    "wiki.backup/products/v5gv2w.md",
+    "wiki.backup/products/v5gv2s.md",
+    "wiki.backup/products/v5011s3w.md",
+    "wiki.backup/products/v5011s2w.md",
+    "wiki.backup/products/v5011s2s.md",
+    "wiki.backup/topics",
+    "wiki.backup/sources",
+    "wiki.backup/selection-guide",
+    "wiki.backup/products",
+    "wiki.backup/explorations",
+    "wiki.backup/entities",
+    "wiki.backup/drafts",
+    "wiki.backup/decisions",
+    "wiki.backup",
+    "wiki.backup-20260412-121723/selection-guide",
+    "未命名 1.canvas",
+    "未命名.canvas"
+  ]
+}

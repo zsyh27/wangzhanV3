@@ -1,0 +1,23 @@
+User-agent: Baiduspider
+Allow: /
+Allow: /about
+Allow: /products
+Allow: /solutions
+Allow: /cases
+Allow: /news
+Allow: /contact
+Disallow: /api
+Disallow: /_next
+Disallow: /static
+Disallow: /admin
+Disallow: /private
+
+User-agent: *
+Allow: /
+Disallow: /api
+Disallow: /_next
+Disallow: /static
+Disallow: /admin
+Disallow: /private
+
+Sitemap: http://www.hubeikexinda.online/sitemap.xml
