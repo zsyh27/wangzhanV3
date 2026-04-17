@@ -64,10 +64,10 @@ class CronScheduler {
             }
           }
           
-          console.log(`执行任务: ${task.name}`);
+          console.log(`执行任务: ${task.name} (类型: ${task.type})`);
           
           try {
-            if (task.type === 'content-generator') {
+            if (task.type === 'content-generator' || task.type === 'news-generator') {
               const result = await taskManager.executeContentGeneratorTask(task);
               // 更新任务的最后执行时间和微信同步状态
               await taskManager.updateTask(task.id, {
@@ -75,6 +75,14 @@ class CronScheduler {
                 wechatSyncStatus: result.wechatSyncStatus,
                 wechatMediaId: result.wechatMediaId,
                 lastGeneratedSlug: result.slug
+              });
+              console.log(`任务执行成功: ${task.name}`);
+            } else if (task.type === 'product-sync' || task.type === 'selection-guide-sync') {
+              const result = await taskManager.executeWechatSyncTask(task);
+              await taskManager.updateTask(task.id, {
+                lastRun: new Date().toISOString(),
+                wechatSyncStatus: result.wechatSyncStatus,
+                wechatMediaId: result.wechatMediaId
               });
               console.log(`任务执行成功: ${task.name}`);
             }

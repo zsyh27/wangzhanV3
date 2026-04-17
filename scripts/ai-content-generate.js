@@ -21,14 +21,73 @@ const MOONSHOT_API_KEY = moonshotConfig.apiKey
 const aiContentConfig = getAIContentConfig()
 const { minWords, maxWords, keywordDensityMin, keywordDensityMax, maxRetries } = aiContentConfig
 
-// 内容目录 - 使用 __dirname 确保路径正确
-const CONTENT_DIR = path.join(__dirname, '..', 'content', 'news')
+// 内容目录 - 使用 process.cwd() 确保路径正确
+const CONTENT_DIR = path.join(process.cwd(), 'content', 'news')
 
 // 品牌配置
 const BRAND_NAME = '湖北科信达机电设备有限公司'
 
 // 新闻图片目录
 const NEWS_IMAGES_DIR = path.join(process.cwd(), 'public', 'images', 'news')
+
+// 分类追踪文件
+const CATEGORY_TRACKER_FILE = path.join(__dirname, '..', 'data', 'category-tracker.json')
+
+// 三个内容分类
+const CONTENT_CATEGORIES = [
+  { key: 'policy', name: '政策法规', keywords: ['武汉中央空调阀门', '湖北暖通工程', '湖北节能改造'] },
+  { key: 'market', name: '市场报告', keywords: ['武汉楼宇自控', '武汉暖通市场', '湖北中央空调'] },
+  { key: 'exhibition', name: '展会活动', keywords: ['武汉阀门市场', '湖北暖通行业', '霍尼韦尔展会'] }
+]
+
+// 数据目录
+const DATA_DIR = path.join(__dirname, '..', 'data')
+if (!fs.existsSync(DATA_DIR)) {
+  fs.mkdirSync(DATA_DIR, { recursive: true })
+}
+
+/**
+ * 获取下一个要发布的分类
+ * @returns {Object} 分类信息
+ */
+function getNextCategory() {
+  let tracker = { lastCategory: -1 }
+  
+  try {
+    if (fs.existsSync(CATEGORY_TRACKER_FILE)) {
+      const content = fs.readFileSync(CATEGORY_TRACKER_FILE, 'utf8')
+      tracker = JSON.parse(content)
+    }
+  } catch (error) {
+    console.log('读取分类追踪文件失败，使用默认值')
+  }
+  
+  // 循环选择下一个分类
+  const nextIndex = (tracker.lastCategory + 1) % CONTENT_CATEGORIES.length
+  tracker.lastCategory = nextIndex
+  
+  // 保存追踪信息
+  try {
+    fs.writeFileSync(CATEGORY_TRACKER_FILE, JSON.stringify(tracker, null, 2))
+  } catch (error) {
+    console.log('保存分类追踪文件失败')
+  }
+  
+  const category = CONTENT_CATEGORIES[nextIndex]
+  console.log(`本次发布分类: ${category.name}`)
+  
+  return category
+}
+
+/**
+ * 从指定分类的关键词中随机选择一个
+ * @param {Object} category - 分类信息
+ * @returns {string} 关键词
+ */
+function getRandomKeyword(category) {
+  const keywords = category.keywords
+  return keywords[Math.floor(Math.random() * keywords.length)]
+}
 
 /**
  * 获取指定分类的新闻图片
@@ -170,14 +229,28 @@ function generateFallbackNews(keyword, currentYear, currentDate) {
   ]
 }
 
-function generatePrompt(keyword, category, industryNews) {
+function generatePrompt(keyword, category, industryNews, targetCategory) {
   const now = new Date()
   const today = now.toISOString().split('T')[0]
   const slug = keyword.replace(/[\s，。、；：""''（）【】]/g, '-').toLowerCase()
   
   const newsSummary = industryNews.map(news => `${news.date} - ${news.title}: ${news.content}`).join('\n')
   
-  return `请以${BRAND_NAME}市场部的身份，撰写一篇关于"${keyword}"的暖通行业动态新闻文章。
+  let categoryFocus = ''
+  let categoryKeywords = ''
+  
+  if (targetCategory === 'policy') {
+    categoryFocus = '政策法规类'
+    categoryKeywords = '政策法规,建筑节能,双碳目标,政府补贴,湖北政策'
+  } else if (targetCategory === 'market') {
+    categoryFocus = '市场报告类'
+    categoryKeywords = '市场分析,行业报告,市场规模,竞争格局,湖北市场'
+  } else if (targetCategory === 'exhibition') {
+    categoryFocus = '展会活动类'
+    categoryKeywords = '行业展会,技术交流,产品展示,武汉展会,霍尼韦尔'
+  }
+  
+  return `请以${BRAND_NAME}市场部的身份，撰写一篇关于"${keyword}"的暖通行业${categoryFocus}文章。
 
 要求：
 1. 文章字数在${minWords}-${maxWords}字之间
@@ -185,7 +258,7 @@ function generatePrompt(keyword, category, industryNews) {
 3. 文章需要引用最新的行业数据和信息
 4. 自然融入品牌身份：${BRAND_NAME}是霍尼韦尔阀门湖北官方授权代理商，提供原厂正品保障和技术支持
 5. 内容专业、准确、详实，适合暖通工程师、采购人员阅读
-6. 文章结构清晰，仅围绕以下三种类型展开：政策法规类、市场报告类、展会活动类
+6. 文章结构清晰，**仅围绕${categoryFocus}展开**，不要涉及其他分类
 7. 关键词"${keyword}"密度控制在${Math.round(keywordDensityMin * 100)}%-${Math.round(keywordDensityMax * 100)}%之间
 8. 加入适当的图片描述，使用以下格式的图片链接：
    ![暖通行业发展趋势图](https://picsum.photos/800/450?random=暖通行业发展趋势图&image_size=landscape_16_9)
@@ -208,12 +281,12 @@ ${newsSummary}
   "slug": "${slug}",
   "date": "${today}",
   "author": "湖北科信达市场部",
-  "category": "行业动态",
-  "seoTitle": "${keyword}_暖通行业动态_霍尼韦尔阀门湖北代理商_湖北科信达",
-  "seoDescription": "${BRAND_NAME}为您带来关于${keyword}的深度行业分析，作为霍尼韦尔阀门湖北官方授权代理商，提供武汉及湖北区域专业暖通解决方案。",
-  "keywords": "${keyword},暖通行业,行业动态,市场分析,霍尼韦尔阀门,湖北科信达",
+  "category": "${categoryFocus}",
+  "seoTitle": "${keyword}_${categoryFocus}_霍尼韦尔阀门湖北代理商_湖北科信达",
+  "seoDescription": "${BRAND_NAME}为您带来关于${keyword}的${categoryFocus}深度分析，作为霍尼韦尔阀门湖北官方授权代理商，提供武汉及湖北区域专业暖通解决方案。",
+  "keywords": "${keyword},${categoryKeywords},暖通行业,霍尼韦尔阀门,湖北科信达",
   "relatedLinks": ["/solutions","/cases","/about"],
-  "content": "文章正文内容，用Markdown格式，包含##小标题，可加入行业数据表格和图片描述。注意：内容中的换行必须使用\\n转义，不能直接使用换行符"
+  "content": "文章正文内容，用Markdown格式，包含##小标题，可加入行业数据表格和图片描述。注意：内容中的换行必须使用\\n转义，不能直接使用换行符。全文仅围绕${categoryFocus}展开。"
 }`
 }
 
@@ -279,23 +352,14 @@ function callMoonshotAPI(prompt) {
 async function generateContentWithAI(keyword, taskType) {
   console.log('开始生成内容...')
   
-  // 固定为行业动态类别
-  const category = '行业动态'
+  // 获取下一个要发布的分类
+  const targetCategory = getNextCategory()
+  const category = targetCategory.name
   console.log(`任务类型: ${category}`)
   
-  // 如果没有提供关键词，使用行业动态关键词
+  // 如果没有提供关键词，从当前分类的关键词中随机选择
   if (!keyword) {
-    const industryKeywords = [
-      '武汉中央空调阀门',
-      '湖北暖通工程',
-      '武汉楼宇自控',
-      '湖北节能改造',
-      '武汉暖通市场',
-      '湖北中央空调',
-      '武汉阀门市场',
-      '湖北暖通行业'
-    ]
-    keyword = industryKeywords[Math.floor(Math.random() * industryKeywords.length)]
+    keyword = getRandomKeyword(targetCategory)
   }
   
   console.log(`关键词: ${keyword}`)
@@ -309,7 +373,7 @@ async function generateContentWithAI(keyword, taskType) {
   const industryNews = await searchIndustryNews(keyword)
   
   // 生成提示词
-  const prompt = generatePrompt(keyword, category, industryNews, selectedImages)
+  const prompt = generatePrompt(keyword, category, industryNews, targetCategory.key)
   
   if (!MOONSHOT_API_KEY) {
     console.log('未配置Moonshot API，使用模拟数据')
