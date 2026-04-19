@@ -194,6 +194,17 @@ npm run verify:content
 - **可视化管理** - React 管理界面
 - **RESTful API** - 完整的 CRUD API 接口
 
+**启动定时任务调度器**：
+```bash
+# 先构建定时任务管理器
+npm run build:cron-task-manager
+
+# 启动调度器（后台运行）
+npm run scheduler:start
+```
+
+**注意**：微信同步功能需要在微信公众平台后台配置 IP 白名单，详见 [部署到服务器.md](./部署到服务器.md)。
+
 ## AI JSON清洗处理功能
 
 ### 功能说明
@@ -344,6 +355,9 @@ npm run build:cron-task-manager
 
 # 开发定时任务管理器
 npm run dev:cron-task-manager
+
+# 启动定时任务调度器
+npm run scheduler:start
 ```
 
 ## 升级记录
