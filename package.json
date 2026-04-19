@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "prebuild": "node scripts/generate-selection-data.js",
+    "prebuild": "npm run build:cron-task-manager && node scripts/generate-selection-data.js",
     "postbuild": "node scripts/generate-seo-files.js",
     "start": "next start",
     "lint": "next lint",
@@ -23,7 +23,7 @@
     "test:e2e:ui": "playwright test --ui",
     "test-and-preview": "npm run build && npm run dev",
     "check:scheduled": "node scripts/check-scheduled-posts.js",
-    "build:cron-task-manager": "cd cron-task-manager && npm run build",
+    "build:cron-task-manager": "cd cron-task-manager && npm install && npm run build",
     "dev:cron-task-manager": "cd cron-task-manager && npm run dev",
     "scheduler:start": "node scripts/task-scheduler.js"
   },
