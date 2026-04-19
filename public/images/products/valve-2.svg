@@ -1,9 +1,0 @@
-<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="300" fill="#F8FAFC"/>
-  <rect x="140" y="90" width="120" height="120" rx="4" fill="#005EB8" opacity="0.1"/>
-  <circle cx="200" cy="150" r="40" fill="#005EB8" opacity="0.2"/>
-  <circle cx="200" cy="150" r="30" fill="#005EB8" opacity="0.3"/>
-  <circle cx="200" cy="150" r="20" fill="#005EB8" opacity="0.4"/>
-  <rect x="190" y="120" width="20" height="60" fill="#005EB8"/>
-  <text x="200" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#64748B">霍尼韦尔电动三通阀</text>
-</svg>

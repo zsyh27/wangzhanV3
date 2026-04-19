@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { trackSelectionTool, trackProductView, useBaiduAnalytics } from '@/lib/baidu-analytics'
+import selectionProducts from '@/data/selection-products.json'
 
 interface Product {
   model: string
@@ -15,88 +16,7 @@ interface Product {
   slug: string
 }
 
-const products: Product[] = [
-  {
-    model: 'V5011B2W',
-    sizeRange: 'DN15-DN50',
-    connection: 'thread',
-    control: 'modulating',
-    media: 'cold-hot-water',
-    slug: 'v5011b2w'
-  },
-  {
-    model: 'V5011S2W',
-    sizeRange: 'DN15-DN50',
-    connection: 'thread',
-    control: 'modulating',
-    media: 'cold-hot-water',
-    slug: 'v5011s2w'
-  },
-  {
-    model: 'V5011S2S',
-    sizeRange: 'DN15-DN50',
-    connection: 'thread',
-    control: 'modulating',
-    media: 'steam',
-    slug: 'v5011s2s'
-  },
-  {
-    model: 'V5GV2W',
-    sizeRange: 'DN15-DN150',
-    connection: 'flange',
-    control: 'modulating',
-    media: 'cold-hot-water',
-    slug: 'v5gv2w'
-  },
-  {
-    model: 'V5GV2S',
-    sizeRange: 'DN15-DN150',
-    connection: 'flange',
-    control: 'modulating',
-    media: 'steam',
-    slug: 'v5gv2s'
-  },
-  {
-    model: 'V6GV',
-    sizeRange: 'DN15-DN250',
-    connection: 'flange',
-    control: 'modulating',
-    media: 'cold-hot-water',
-    slug: 'v6gv'
-  },
-  {
-    model: 'VBA16P',
-    sizeRange: 'DN15-DN100',
-    connection: 'thread',
-    control: 'both',
-    media: 'cold-hot-water',
-    slug: 'vba16p'
-  },
-  {
-    model: 'VBF16E',
-    sizeRange: 'DN15-DN150',
-    connection: 'flange',
-    control: 'both',
-    media: 'cold-hot-water',
-    slug: 'vbf16e-vbh16e'
-  },
-  {
-    model: 'V9BF',
-    sizeRange: 'DN50-DN600',
-    connection: 'flange',
-    control: 'both',
-    media: 'both',
-    slug: 'v9bf'
-  },
-  {
-    model: 'VH58',
-    sizeRange: 'DN65-DN250',
-    connection: 'flange',
-    control: 'modulating',
-    media: 'cold-hot-water',
-    slug: 'vh58'
-  }
-]
+const products: Product[] = selectionProducts as Product[]
 
 const sizeOptions = [
   'DN15', 'DN20', 'DN25', 'DN32', 'DN40', 'DN50',

@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import remarkHtml from 'remark-html'
+import remarkGfm from 'remark-gfm'
 
 /**
  * 内容类型定义
@@ -149,6 +150,7 @@ export async function getContentBySlug<T extends BaseFrontmatter>(
     const { data, content } = matter(fileContents)
 
     const processedContent = await remark()
+      .use(remarkGfm)
       .use(remarkHtml)
       .process(content)
 
@@ -233,6 +235,7 @@ async function getContentByFile<T extends BaseFrontmatter>(
     const { data, content } = matter(fileContents)
 
     const processedContent = await remark()
+      .use(remarkGfm)
       .use(remarkHtml)
       .process(content)
 

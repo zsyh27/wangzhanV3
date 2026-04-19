@@ -1,0 +1,138 @@
+[
+  {
+    "model": "V5011B2W",
+    "slug": "v5011b2w",
+    "sizeRange": "DN15-DN50",
+    "connection": "thread",
+    "control": "modulating",
+    "media": "cold-hot-water"
+  },
+  {
+    "model": "V5011B3W",
+    "slug": "v5011b3w",
+    "sizeRange": "DN15-DN50",
+    "connection": "thread",
+    "control": "modulating",
+    "media": "cold-hot-water"
+  },
+  {
+    "model": "V5011S2S",
+    "slug": "v5011s2s",
+    "sizeRange": "DN15-DN50",
+    "connection": "thread",
+    "control": "modulating",
+    "media": "steam"
+  },
+  {
+    "model": "V5011S2W",
+    "slug": "v5011s2w",
+    "sizeRange": "DN15-DN50",
+    "connection": "thread",
+    "control": "modulating",
+    "media": "cold-hot-water"
+  },
+  {
+    "model": "V5011S3W",
+    "slug": "v5011s3w",
+    "sizeRange": "DN15-DN50",
+    "connection": "thread",
+    "control": "modulating",
+    "media": "cold-hot-water"
+  },
+  {
+    "model": "V5GV2S",
+    "slug": "v5gv2s",
+    "sizeRange": "DN15-DN150",
+    "connection": "flange",
+    "control": "modulating",
+    "media": "steam"
+  },
+  {
+    "model": "V5GV2W",
+    "slug": "v5gv2w",
+    "sizeRange": "DN15-DN150",
+    "connection": "flange",
+    "control": "modulating",
+    "media": "cold-hot-water"
+  },
+  {
+    "model": "V5GV3W",
+    "slug": "v5gv3w",
+    "sizeRange": "DN50-DN150",
+    "connection": "flange",
+    "control": "modulating",
+    "media": "cold-hot-water"
+  },
+  {
+    "model": "V6GV",
+    "slug": "v6gv",
+    "sizeRange": "DN15-DN250",
+    "connection": "flange",
+    "control": "modulating",
+    "media": "cold-hot-water"
+  },
+  {
+    "model": "V8BF..S",
+    "slug": "v8bf..s",
+    "sizeRange": "DN50-DN800",
+    "connection": "flange",
+    "control": "both",
+    "media": "cold-hot-water"
+  },
+  {
+    "model": "V9BF",
+    "slug": "v9bf",
+    "sizeRange": "DN50-DN800",
+    "connection": "flange",
+    "control": "both",
+    "media": "cold-hot-water"
+  },
+  {
+    "model": "V9BFW25",
+    "slug": "v9bfw25",
+    "sizeRange": "DN50-DN600",
+    "connection": "flange",
+    "control": "both",
+    "media": "cold-hot-water"
+  },
+  {
+    "model": "VBA16F",
+    "slug": "vba16f",
+    "sizeRange": "DN65-DN150",
+    "connection": "flange",
+    "control": "modulating",
+    "media": "cold-hot-water"
+  },
+  {
+    "model": "VBA16P..E",
+    "slug": "vba16p..e",
+    "sizeRange": "DN15-DN50",
+    "connection": "thread",
+    "control": "modulating",
+    "media": "cold-hot-water"
+  },
+  {
+    "model": "VBA16P",
+    "slug": "vba16p",
+    "sizeRange": "DN20-DN80",
+    "connection": "thread",
+    "control": "modulating",
+    "media": "cold-hot-water"
+  },
+  {
+    "model": "VBF16..E和VBH16..E",
+    "slug": "vbf16..e和vbh16..e",
+    "sizeRange": "DN15-DN50",
+    "connection": "thread",
+    "control": "modulating",
+    "media": "cold-hot-water"
+  },
+  {
+    "model": "VH58",
+    "slug": "vh58",
+    "sizeRange": "DN65-DN250",
+    "connection": "flange",
+    "control": "modulating",
+    "media": "cold-hot-water"
+  }
+]
